@@ -19,13 +19,13 @@ export default function EarlyAccessPage() {
       }} />
 
       {/* URGENCY BANNER */}
-      <div className="relative z-20 mx-auto mt-4 px-4 py-2 border border-primary/30 bg-primary/10 rounded-full backdrop-blur-md flex items-center justify-center gap-3 w-fit shadow-[0_4px_24px_rgba(120,252,214,0.15)]">
+      {/* <div className="relative z-20 mx-auto mt-4 px-4 py-2 border border-primary/30 bg-primary/10 rounded-full backdrop-blur-md flex items-center justify-center gap-3 w-fit shadow-[0_4px_24px_rgba(120,252,214,0.15)]">
         <span className="flex h-2 w-2 relative">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
         </span>
         <span className="text-sm font-bold text-primary uppercase tracking-widest">Only 12 early access spots remaining for Semester 1 — 2025</span>
-      </div>
+      </div> */}
 
       <div className="flex-1 w-full max-w-6xl mx-auto px-4 md:px-6 relative z-10 py-16 flex flex-col lg:flex-row gap-16 lg:gap-8 xl:gap-16 items-start justify-center">
         

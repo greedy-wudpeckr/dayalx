@@ -53,7 +53,7 @@ export default function SubjectsPage() {
 
           <div className="relative w-full max-w-md mt-6 mx-auto">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="text-muted-foreground w-5 h-5" />
+              <Search className="w-5 h-5" />
             </div>
             <input 
               type="text" 

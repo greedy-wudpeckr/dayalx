@@ -70,7 +70,7 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden z-50 text-foreground"
+          className="md:hidden z-50 text-foreground cursor-pointer"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

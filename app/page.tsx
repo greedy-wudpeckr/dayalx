@@ -107,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* SOCIAL PROOF SECTION */}
-      <section className="py-12 border-y border-white/5 bg-black/20">
+      {/* <section className="py-12 border-y border-white/5 bg-black/20">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm font-medium text-muted-foreground mb-8 uppercase tracking-widest">
             Already in conversation with institutions across India
@@ -118,7 +118,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* PROBLEM VS SOLUTION SECTION */}
       <section className="py-24 relative z-10 px-4">
@@ -248,7 +248,7 @@ export default function Home() {
                   <button
                     key={idx}
                     onClick={() => setActiveTestimonial(idx)}
-                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                       activeTestimonial === idx ? "bg-[#0f1211] w-10" : "bg-[#0f1211]/30 hover:bg-[#0f1211]/50 w-2.5"
                     }`}
                     aria-label={`Go to testimonial ${idx + 1}`}
@@ -285,71 +285,6 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm lg:text-base">{step.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PRICING SECTION */}
-      <section className="py-24 relative z-10 px-4 bg-white/[0.02]">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">Institutional Plans Built for Every College</h2>
-            
-            {/* Toggle */}
-            <div className="inline-flex glass-card p-1 items-center rounded-full mt-4">
-              <button 
-                className={`py-2 px-6 rounded-full text-sm font-medium transition-all duration-500 ${!pricingAnnual ? 'bg-primary text-[#0f1211]' : 'text-muted-foreground hover:text-white'}`}
-                onClick={() => setPricingAnnual(false)}
-              >
-                Per Semester
-              </button>
-              <button 
-                className={`py-2 px-6 rounded-full text-sm font-medium transition-all duration-500 ${pricingAnnual ? 'bg-primary text-[#0f1211]' : 'text-muted-foreground hover:text-white'}`}
-                onClick={() => setPricingAnnual(true)}
-              >
-                Annual Contract
-              </button>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto items-center mt-12">
-            {/* Tier 1 */}
-            <div className="glass-card p-8 hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl font-medium text-muted-foreground mb-4">Starter</h3>
-              <div className="text-3xl font-bold mb-6">Contact for Quote</div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /><span className="text-sm">Small colleges</span></li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /><span className="text-sm">1–2 subjects</span></li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /><span className="text-sm">Up to 30 students/batch</span></li>
-              </ul>
-              <Button variant="outline" className="w-full rounded-full border-white/20">Talk to Sales</Button>
-            </div>
-
-            {/* Tier 2 (Popular) */}
-            <div className="glass-card p-8 bg-primary text-[#0f1211] shadow-[0_4px_24px_rgba(120,252,214,0.2)] md:-mt-8 md:mb-8 hover:-translate-y-2 transition-all duration-300 relative">
-              <div className="absolute top-0 right-0 bg-primary-dark text-[#0f1211] text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl">POPULAR</div>
-              <h3 className="text-xl font-bold mb-4">Institution</h3>
-              <div className="text-4xl font-black mb-6">Custom Pricing</div>
-              <ul className="space-y-4 mb-8 font-medium">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5" /><span className="text-sm">Medium to large colleges</span></li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5" /><span className="text-sm">5–10 subjects</span></li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5" /><span className="text-sm">60–120+ students/batch</span></li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5" /><span className="text-sm">Dedicated Account Manager</span></li>
-              </ul>
-              <Button className="w-full rounded-full bg-[#0f1211] text-primary hover:bg-[#0f1211]/90">Request Full Quote</Button>
-            </div>
-
-            {/* Tier 3 */}
-            <div className="glass-card p-8 hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl font-medium text-muted-foreground mb-4">Enterprise</h3>
-              <div className="text-3xl font-bold mb-6">Volume Pricing</div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /><span className="text-sm">Multi-campus institutions</span></li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /><span className="text-sm">Custom kit architecture</span></li>
-                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /><span className="text-sm">Priority logistics & inventory</span></li>
-              </ul>
-              <Button variant="outline" className="w-full rounded-full border-white/20">Talk to Sales</Button>
-            </div>
           </div>
         </div>
       </section>

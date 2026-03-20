@@ -226,7 +226,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-24 px-4 bg-[#0a0c0b] text-center border-t border-white/5">
+      {/* <section className="py-24 px-4 bg-[#0a0c0b] text-center border-t border-white/5">
         <div className="container mx-auto max-w-3xl glass-card p-12 md:p-16 border-primary/20 shadow-[0_0_50px_rgba(120,252,214,0.1)]">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to See It In Action?</h2>
           <p className="text-lg text-muted-foreground mb-8">
@@ -243,7 +243,7 @@ export default function SolutionsPage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
     </div>
   );

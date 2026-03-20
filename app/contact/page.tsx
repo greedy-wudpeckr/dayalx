@@ -151,7 +151,7 @@ export default function ContactPage() {
                </div>
                <div>
                  <h4 className="font-semibold text-lg text-foreground">Email</h4>
-                 <p className="text-primary mt-1 hover:underline cursor-pointer">hello@dayalx.com</p>
+                 <p className="text-primary mt-1 hover:underline cursor-pointer">sanyamgoel05@gmail.com</p>
                  <p className="text-sm text-muted-foreground mt-1">For general enquiries</p>
                </div>
              </div>
@@ -162,7 +162,7 @@ export default function ContactPage() {
                </div>
                <div>
                  <h4 className="font-semibold text-lg text-foreground">Phone / WhatsApp</h4>
-                 <p className="text-primary mt-1 hover:underline cursor-pointer">+91 98765 43210</p>
+                 <p className="text-primary mt-1 hover:underline cursor-pointer">+91 93504 32419</p>
                  <p className="text-sm text-muted-foreground mt-1">Available Mon–Sat, 9am–6pm IST</p>
                </div>
              </div>
@@ -216,7 +216,7 @@ export default function ContactPage() {
       </section>
 
       {/* EMBEDDED CALENDAR MOCKUP */}
-      <section className="py-24 relative z-10 px-4">
+      {/* <section className="py-24 relative z-10 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-semibold mb-6">Or, Book a 20-Min Demo Directly</h2>
           <p className="text-lg text-muted-foreground mb-12">No commitment required. Just a conversation.</p>
@@ -229,7 +229,7 @@ export default function ContactPage() {
              <p className="text-sm text-white/40 max-w-sm mt-4">Actual integration would drop in here via iframe or react wrapper.</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ */}
       <section className="py-24 px-4 container mx-auto max-w-3xl border-t border-white/5">

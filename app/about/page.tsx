@@ -105,7 +105,7 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM SECTION (Placeholder) */}
-      <section className="py-24 relative z-10 px-4 bg-white/[0.02]">
+      {/* <section className="py-24 relative z-10 px-4 bg-white/[0.02]">
         <div className="container mx-auto max-w-5xl text-center">
           <h2 className="text-3xl md:text-5xl font-semibold mb-16">The People Behind DAYALX</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -121,7 +121,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CONTACT CTA */}
       <section className="py-24 px-4 text-center border-t border-white/5">
