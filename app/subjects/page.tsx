@@ -6,23 +6,26 @@ import { Search, ArrowRight, FlaskConical, Stethoscope, Microscope, Beaker } fro
 import { useState } from "react";
 import Link from "next/link";
 
-const CATEGORIES = ["All", "Pharmacy", "Nursing & Medical", "Science & Chemistry", "Microbiology & Biotech"];
+const CATEGORIES = ["All", "Medical", "Pharmacy", "Nursing", "Science & Chemistry"];
 
 const KITS = [
-  { name: "Pharmaceutics Lab Kit", dept: "Pharmacy", align: "PCI Syllabus", size: "30–120 students", items: 38 },
-  { name: "Pharmacognosy Lab Kit", dept: "Pharmacy", align: "PCI Syllabus", size: "30–120 students", items: 45 },
-  { name: "Anatomy & Physiology Lab Kit", dept: "Nursing & Medical", align: "INC Syllabus", size: "30–60 students", items: 25 },
-  { name: "Nursing Fundamentals Kit", dept: "Nursing & Medical", align: "INC Syllabus", size: "30–60 students", items: 55 },
-  { name: "Organic Chemistry Lab Kit", dept: "Science & Chemistry", align: "UGC Syllabus", size: "60–120 students", items: 60 },
-  { name: "Analytical Chemistry Lab Kit", dept: "Science & Chemistry", align: "UGC Syllabus", size: "60–120 students", items: 42 },
-  { name: "Microbiology Fundamentals Kit", dept: "Microbiology & Biotech", align: "UGC Syllabus", size: "30–60 students", items: 32 },
-  { name: "Biotechnology Lab Kit", dept: "Microbiology & Biotech", align: "UGC Syllabus", size: "30–60 students", items: 28 },
+  { name: "Mbbs subject kit", dept: "Medical", align: "NMC Syllabus", size: "30–120 students", items: 40 },
+  { name: "Dpharma subject kit", dept: "Pharmacy", align: "PCI Syllabus", size: "30–120 students", items: 35 },
+  { name: "Bpharma subject kit", dept: "Pharmacy", align: "PCI Syllabus", size: "30–120 students", items: 45 },
+  { name: "Nursing subject kit", dept: "Nursing", align: "INC Syllabus", size: "30–60 students", items: 30 },
+  { name: "Chemistry subject kit", dept: "Science & Chemistry", align: "UGC Syllabus", size: "60–120 students", items: 50 },
 ];
 
 export default function SubjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredKits = activeCategory === "All" ? KITS : KITS.filter(kit => kit.dept === activeCategory);
+  const filteredKits = KITS.filter(kit => {
+    const matchesCategory = activeCategory === "All" || kit.dept === activeCategory;
+    const matchesSearch = kit.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          kit.dept.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -56,6 +59,8 @@ export default function SubjectsPage() {
               type="text" 
               placeholder="Search by subject, department..." 
               className="w-full bg-white/5 border border-white/20 rounded-full py-3 pl-10 pr-4 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors glass-card"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
         </motion.div>

@@ -72,11 +72,8 @@ export default function HowItWorksPage() {
              </div>
              
              <div className="flex-1 w-full order-1 md:order-2 glass-card p-2 border-white/10">
-               <div className="bg-[#0a0c0b] rounded-xl aspect-[4/3] flex items-center justify-center">
-                 <div className="text-muted-foreground text-sm flex flex-col items-center">
-                   <FileText size={48} className="mb-4 text-primary/40" />
-                   Mockup: Onboarding Form & Spec
-                 </div>
+               <div className="bg-[#0a0c0b] rounded-xl aspect-[4/3] flex items-center justify-center overflow-hidden">
+                 <img src="/Screenshot%202026-03-20%20164403.png" alt="Onboarding Form & Spec" className="w-full h-full object-cover opacity-90 transition-opacity hover:opacity-100" />
                </div>
              </div>
            </div>
@@ -84,11 +81,8 @@ export default function HowItWorksPage() {
            {/* PHASE 2 */}
            <div className="flex flex-col md:flex-row gap-12 items-center">
              <div className="flex-1 w-full glass-card p-2 border-white/10">
-               <div className="bg-[#0a0c0b] rounded-xl aspect-[4/3] flex items-center justify-center">
-                 <div className="text-muted-foreground text-sm flex flex-col items-center">
-                   <ShieldAlert size={48} className="mb-4 text-primary/40" />
-                   Mockup: Kit Assembly & QC Loop
-                 </div>
+               <div className="bg-[#0a0c0b] rounded-xl aspect-[4/3] flex items-center justify-center overflow-hidden">
+                 <img src="/Screenshot%202026-03-20%20164956.png" alt="Kit Assembly & QC Loop" className="w-full h-full object-cover opacity-90 transition-opacity hover:opacity-100" />
                </div>
              </div>
 
@@ -138,11 +132,8 @@ export default function HowItWorksPage() {
              </div>
              
              <div className="flex-1 w-full order-1 md:order-2 glass-card p-2 border-white/10">
-               <div className="bg-[#0a0c0b] rounded-xl aspect-[4/3] flex items-center justify-center">
-                 <div className="text-muted-foreground text-sm flex flex-col items-center">
-                   <Truck size={48} className="mb-4 text-primary/40" />
-                   Mockup: Delivery Tracking & Logistics
-                 </div>
+               <div className="bg-[#0a0c0b] rounded-xl aspect-[4/3] flex items-center justify-center overflow-hidden">
+                 <img src="/Screenshot%202026-03-20%20165055.png" alt="Delivery Tracking & Logistics" className="w-full h-full object-cover opacity-90 transition-opacity hover:opacity-100" />
                </div>
              </div>
            </div>
@@ -171,9 +162,8 @@ export default function HowItWorksPage() {
              </div>
              
              <div className="flex-[2] w-full glass-card border-primary/20 p-2 shadow-[0_0_50px_rgba(120,252,214,0.15)] order-1 lg:order-2">
-                 <div className="bg-[#0a0c0b] rounded-xl aspect-video flex items-center justify-center border border-white/10">
-                    <PlayCircle className="text-primary/50 w-16 h-16" />
-                    <span className="ml-4 font-bold text-muted-foreground tracking-widest uppercase">Dashboard Walkthrough UI</span>
+                 <div className="bg-[#0a0c0b] rounded-xl aspect-video flex items-center justify-center border border-white/10 overflow-hidden">
+                    <img src="/Screenshot%202026-03-20%20165107.png" alt="Dashboard Walkthrough UI" className="w-full h-full object-cover opacity-90 transition-opacity hover:opacity-100" />
                  </div>
              </div>
 

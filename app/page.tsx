@@ -1,11 +1,34 @@
 "use client";
 
-import { motion} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, PackageSearch, RefreshCcw, Box, Truck } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const TESTIMONIALS = [
+  {
+    quote: "We used to spend three weeks every semester just coordinating lab supply orders. DAYALX cut that to a single afternoon.",
+    author: "Dr. A. Sharma, HOD",
+    designation: "Department of Pharmacy, Excellence College"
+  },
+  {
+    quote: "Standardizing practicals across 12 batches was a nightmare. Now, every student gets the exact same high-quality kit.",
+    author: "Prof. R. Mehta, Dean",
+    designation: "Faculty of Science, National University"
+  },
+  {
+    quote: "The INC-aligned nursing kits saved our staff countless hours. No more scrambling for missing items mid-semester.",
+    author: "Dr. S. Nair, Principal",
+    designation: "City College of Nursing"
+  },
+  {
+    quote: "From 40 different vendors to exactly one. The transparency and ease of tracking our lab inventory is finally 21st century.",
+    author: "M. Desai, Procurement Head",
+    designation: "Global Medical Institute"
+  }
+];
 
 const STAGGER_CHILDREN = {
   hidden: { opacity: 0, y: 20 },
@@ -14,6 +37,14 @@ const STAGGER_CHILDREN = {
 
 export default function Home() {
   const [pricingAnnual, setPricingAnnual] = useState(false);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -65,11 +96,12 @@ export default function Home() {
             <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
             <div className="w-3 h-3 rounded-full bg-green-500/80" />
           </div>
-          <div className="absolute inset-0 mt-12 bg-[#0a0c0b] flex items-center justify-center p-8">
-            <div className="w-full h-full border border-dashed border-white/20 rounded-xl flex items-center justify-center text-muted-foreground flex-col gap-4">
-              <PackageSearch size={48} className="text-primary/50" />
-              <p>Dashboard / Kit Illustration Render Placeholder</p>
-            </div>
+          <div className="absolute top-12 left-0 right-0 bottom-0 bg-[#0a0c0b] overflow-hidden">
+            <img 
+              src="/Gemini_Generated_Image_dzrrmsdzrrmsdzrr.png" 
+              alt="Lab Kit Dashboard Illustration" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
       </section>
@@ -144,28 +176,36 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="glass-card p-6 md:col-span-2 group hover:-translate-y-1 transition-all duration-300">
               <div className="glass-gradient-overlay absolute top-0 inset-x-0 h-[30%] rounded-t-2xl pointer-events-none" />
-              <div className="h-64 bg-black/40 rounded-xl mb-6 flex items-center justify-center border border-white/5">Illustration</div>
+              <div className="h-64 bg-black/40 rounded-xl mb-6 flex items-center justify-center border border-white/5 overflow-hidden">
+                <img src="/Screenshot%202026-03-20%20162622.png" alt="Syllabus-Aligned Kits" className="w-full h-full object-cover" />
+              </div>
               <h3 className="text-xl font-semibold mb-2">Syllabus-Aligned Kits</h3>
               <p className="text-muted-foreground">Pre-mapped to university curriculum for pharmacy, nursing, medical & science labs.</p>
             </div>
             
             <div className="glass-card p-6 group hover:-translate-y-1 transition-all duration-300">
               <div className="glass-gradient-overlay absolute top-0 inset-x-0 h-[30%] rounded-t-2xl pointer-events-none" />
-              <div className="h-40 bg-black/40 rounded-xl mb-6 flex items-center justify-center border border-white/5 overflow-hidden"><RefreshCcw className="text-primary/40 w-16 h-16" /></div>
+              <div className="h-40 bg-black/40 rounded-xl mb-6 flex items-center justify-center border border-white/5 overflow-hidden">
+                <img src="/Screenshot%202026-03-20%20162831.png" alt="Batch-Ready Quantities" className="w-full h-full object-cover" />
+              </div>
               <h3 className="text-xl font-semibold mb-2">Batch-Ready Quantities</h3>
               <p className="text-muted-foreground">Calibrated consumable quantities for your exact student batch size.</p>
             </div>
 
             <div className="glass-card p-6 group hover:-translate-y-1 transition-all duration-300">
               <div className="glass-gradient-overlay absolute top-0 inset-x-0 h-[30%] rounded-t-2xl pointer-events-none" />
-              <div className="h-40 bg-black/40 rounded-xl mb-6 flex items-center justify-center border border-white/5 overflow-hidden"><Box className="text-primary/40 w-16 h-16" /></div>
+              <div className="h-40 bg-black/40 rounded-xl mb-6 flex items-center justify-center border border-white/5 overflow-hidden">
+                <img src="/Screenshot%202026-03-20%20162920.png" alt="Multi-Subject Coverage" className="w-full h-full object-cover" />
+              </div>
               <h3 className="text-xl font-semibold mb-2">Multi-Subject Coverage</h3>
               <p className="text-muted-foreground">Chemistry, Biology, Pharmacology, Microbiology & more.</p>
             </div>
             
             <div className="glass-card p-6 md:col-span-2 group hover:-translate-y-1 transition-all duration-300">
               <div className="glass-gradient-overlay absolute top-0 inset-x-0 h-[30%] rounded-t-2xl pointer-events-none" />
-              <div className="h-64 bg-black/40 rounded-xl mb-6 flex items-center justify-center border border-white/5">Illustration</div>
+              <div className="h-64 bg-black/40 rounded-xl mb-6 flex items-center justify-center border border-white/5 overflow-hidden">
+                <img src="/Screenshot%202026-03-20%20164056.png" alt="Single Vendor, One PO" className="w-full h-full object-cover" />
+              </div>
               <h3 className="text-xl font-semibold mb-2">Single Vendor, One PO</h3>
               <p className="text-muted-foreground">Replace 40+ vendor relationships with one purchase order and track everything on our Dashboard.</p>
             </div>
@@ -179,12 +219,42 @@ export default function Home() {
           <div className="w-full bg-primary rounded-3xl min-h-[400px] flex items-center justify-center p-8 md:p-16 relative overflow-hidden group">
             {/* SVG Pattern Overlay */}
             <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '24px 24px' }} />
-            <div className="relative z-10 max-w-4xl text-center">
+            <div className="relative z-10 max-w-4xl text-center w-full px-4">
               <svg className="w-12 h-12 text-[#0f1211]/20 mx-auto mb-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
-              <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold text-[#0f1211] leading-tight mb-8">
-                "We used to spend three weeks every semester just coordinating lab supply orders. DAYALX cut that to a single afternoon."
-              </h2>
-              <div className="text-[#0f1211]/80 font-medium text-lg">Dr. A. Sharma, HOD — Department of Pharmacy, Excellence College</div>
+              
+              <div className="relative min-h-[220px] sm:min-h-[160px] flex items-center justify-center">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeTestimonial}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full"
+                  >
+                    <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold text-[#0f1211] leading-tight mb-8">
+                      "{TESTIMONIALS[activeTestimonial].quote}"
+                    </h2>
+                    <div className="text-[#0f1211]/80 font-medium text-lg">
+                      {TESTIMONIALS[activeTestimonial].author} — {TESTIMONIALS[activeTestimonial].designation}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Carousel Indicators */}
+              <div className="flex justify-center gap-3 mt-12">
+                {TESTIMONIALS.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveTestimonial(idx)}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                      activeTestimonial === idx ? "bg-[#0f1211] w-10" : "bg-[#0f1211]/30 hover:bg-[#0f1211]/50 w-2.5"
+                    }`}
+                    aria-label={`Go to testimonial ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
